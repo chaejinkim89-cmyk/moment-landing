@@ -110,6 +110,8 @@
       min-height: 600px;
       overflow: hidden;
       background: var(--charcoal);
+      border-radius: 0 0 28px 28px;
+      padding: 0;
     }
     #hero-video {
       position: absolute;
@@ -252,11 +254,24 @@
     }
 
     /* ── SHARED SECTION STYLES ─────────────────── */
-    section { width: 100%; }
+    section { width: 100%; padding: 10px 16px; background: transparent; }
     .section-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 120px var(--px);
+      padding: 72px 80px;
+      background: var(--white);
+      border-radius: 24px;
+    }
+    /* Linen-tinted bento cards */
+    #how .section-inner,
+    #testimonials .section-inner,
+    #pricing .section-inner {
+      background: var(--linen);
+    }
+    /* Dark bento card */
+    #final-cta .section-inner {
+      background: var(--charcoal);
+      border-radius: 24px;
     }
     .eyebrow {
       font-size: 11px;
@@ -286,8 +301,8 @@
 
     /* ── PAIN POINT — OPEN BOOK ─────────────────── */
     #pain {
-      padding: 96px var(--px);
-      background: var(--cream);
+      padding: 10px 16px;
+      background: transparent;
       position: relative;
     }
 
@@ -455,7 +470,7 @@
     }
 
     /* ── PRODUCT OVERVIEW ───────────────────────── */
-    #overview { background: var(--linen); }
+    #overview { background: transparent; }
     .overview-grid {
       display: grid;
       grid-template-columns: 1fr 1.1fr;
@@ -630,7 +645,7 @@
     }
 
     /* ── HOW IT WORKS ───────────────────────────── */
-    #how { background: var(--cream); }
+    #how { background: transparent; }
     .how-headline {
       font-family: var(--serif);
       font-size: clamp(32px, 3.5vw, 48px);
@@ -696,12 +711,12 @@
     }
 
     /* ── FEATURES POSTCARD SECTION ──────────────── */
-    #features-scroll { position: relative; height: 300vh; }
+    #features-scroll { position: relative; height: 300vh; padding: 10px 16px; }
 
     .fs-sticky {
       position: sticky;
-      top: 0;
-      height: 100vh;
+      top: 10px;
+      height: calc(100vh - 20px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -709,6 +724,7 @@
       background-image: radial-gradient(circle, rgba(30,27,24,0.07) 1px, transparent 1px);
       background-size: 28px 28px;
       overflow: hidden;
+      border-radius: 20px;
     }
 
     /* ── Postcard stack ── */
@@ -1169,12 +1185,14 @@
     .perm-toggle.off::after { right: auto; left: 2px; }
 
     /* ── VENDOR CATEGORIES ──────────────────────── */
-    #categories { background: var(--linen); position: relative; height: 260vh; }
+    #categories { background: transparent; position: relative; height: 260vh; padding: 10px 16px; }
     .cat-sticky {
       position: sticky;
-      top: 0;
-      height: 100vh;
+      top: 10px;
+      height: calc(100vh - 20px);
       overflow: hidden;
+      background: var(--linen);
+      border-radius: 20px;
     }
     .cat-stage { position: absolute; inset: 0; }
     .vendor-card {
@@ -1230,8 +1248,8 @@
     }
     .cat-mobile { display: none; }
     @media (max-width: 900px) {
-      #categories { height: auto; padding: 80px 0 60px; }
-      .cat-sticky { position: relative; height: auto; }
+      #categories { height: auto; padding: 10px 16px; }
+      .cat-sticky { position: relative; height: auto; top: 0; border-radius: 20px; padding: 60px 0; }
       .cat-stage { display: none; }
       .cat-center-text {
         position: relative; top: auto; left: auto;
@@ -1259,7 +1277,7 @@
     }
 
     /* ── TESTIMONIALS ───────────────────────────── */
-    #testimonials { background: var(--cream); }
+    #testimonials { background: transparent; }
     .testimonials-headline {
       font-family: var(--serif);
       font-size: clamp(32px, 3.5vw, 48px);
@@ -1308,7 +1326,7 @@
     }
 
     /* ── PRICING ────────────────────────────────── */
-    #pricing { background: var(--linen); }
+    #pricing { background: transparent; }
     .pricing-headline {
       font-family: var(--serif);
       font-size: clamp(32px, 3.5vw, 48px);
@@ -1486,7 +1504,7 @@
     }
 
     /* ── FINAL CTA ──────────────────────────────── */
-    #final-cta { background: var(--charcoal); }
+    #final-cta { background: transparent; }
     .final-cta-eyebrow {
       font-size: 11px;
       font-weight: 500;
@@ -1535,8 +1553,16 @@
 
     /* ── FOOTER ─────────────────────────────────── */
     footer {
+      background: transparent;
+      border-top: none;
+      overflow: visible;
+      padding: 10px 16px 24px;
+    }
+    .footer-bento {
       background: var(--charcoal);
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
       overflow: hidden;
     }
     .footer-top {
@@ -1590,7 +1616,7 @@
     /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 1024px) {
       :root { --px: 48px; }
-      .section-inner { padding: 96px var(--px); }
+      .section-inner { padding: 56px 48px; }
 
       .overview-grid { grid-template-columns: 1fr; gap: 48px; }
       .steps-row { gap: 32px; }
@@ -1605,11 +1631,17 @@
     }
     @media (max-width: 768px) {
       :root { --px: 24px; }
+      section { padding: 6px 10px; }
       nav { padding: 20px var(--px); }
       nav.scrolled { padding: 14px var(--px); }
       .nav-links { display: none; }
       .hero-content { left: var(--px); right: var(--px); bottom: 60px; }
-      .section-inner { padding: 72px var(--px); }
+      #hero { border-radius: 0 0 16px 16px; }
+      .section-inner { padding: 40px 28px; border-radius: 16px; }
+      .fs-sticky { border-radius: 12px; top: 6px; height: calc(100vh - 12px); }
+      .cat-sticky { border-radius: 12px; top: 6px; height: calc(100vh - 12px); }
+      .footer-bento { border-radius: 16px; }
+      #final-cta .section-inner { border-radius: 16px; }
       .steps-row { grid-template-columns: 1fr; }
       .step { padding: 0; }
       .compare-row { grid-template-columns: 1fr; }
@@ -2173,6 +2205,7 @@
 
   <!-- FOOTER -->
   <footer>
+    <div class="footer-bento">
     <div class="footer-wordmark">
       <svg viewBox="0 0 935 157" fill="white" xmlns="http://www.w3.org/2000/svg">
         <path d="M76.4 155.6L21.8 24.8V127C21.8 141.2 22.8 148.2 31.2 153V153.8H6.85453e-06V153C8.00001 148.2 9.20001 141.2 9.20001 127V29.2C9.20001 14.2 8.00001 8 0.400007 3V2.4H34.2L84.2 124L133.2 2.4H167V3C159.4 8 158.4 14.2 158.4 29.2V127C158.4 141.2 159.4 148.2 167.2 153V153.8H127.6V153C135.6 148.2 136.8 141.2 136.8 127V22.4L82.6 155.6H76.4ZM266.472 157C218.272 157 185.272 125.2 185.272 78.4C185.272 31.6 218.272 -7.62939e-06 266.472 -7.62939e-06C314.272 -7.62939e-06 347.272 31.6 347.272 78.6C347.272 125.4 314.272 157 266.472 157ZM208.872 78.6C208.872 118.4 230.872 146.6 266.472 146.6C301.872 146.6 323.872 118.4 323.872 78.4C323.872 38.6 301.872 10.6 266.472 10.6C230.872 10.6 208.872 38.6 208.872 78.6ZM441.439 155.6L386.839 24.8V127C386.839 141.2 387.839 148.2 396.239 153V153.8H365.039V153C373.039 148.2 374.239 141.2 374.239 127V29.2C374.239 14.2 373.039 8 365.439 3V2.4H399.239L449.239 124L498.239 2.4H532.039V3C524.439 8 523.439 14.2 523.439 29.2V127C523.439 141.2 524.439 148.2 532.239 153V153.8H492.639V153C500.639 148.2 501.839 141.2 501.839 127V22.4L447.639 155.6H441.439ZM555.473 153.8V153C563.273 148.2 564.273 141.2 564.273 127V29.2C564.273 14.2 563.273 8 555.473 3V2.4H653.273V20.4C631.673 15 618.073 12.2 606.073 12.2H586.673V69.8H598.673C610.073 69.8 626.673 69.2 643.073 68.6V80.6C626.673 79.8 610.073 79.4 598.673 79.4H586.673V143.8H609.673C623.473 143.6 638.673 140.2 657.073 134.6V153.8H555.473ZM773.833 153.8L694.833 29V126C694.833 140.8 695.833 148 704.233 153V153.8H673.833V153C680.833 148 681.833 140.8 681.833 126V29.2C681.833 14.2 681.033 8 676.033 3V2.4H701.833L781.033 127V30.2C781.033 15.4 779.833 8.19999 771.833 3.2V2.4H802.033V3.2C795.033 8.19999 794.033 15.4 794.033 30.2V153.8H773.833ZM816.805 20.6V2.4H935.005V20.6C914.005 15.2 900.805 11.8 888.805 11.8H887.005V127C887.005 141.2 888.005 148.2 895.605 153V153.8H856.005V153C863.605 148.2 864.805 141.2 864.805 127V11.8H863.205C851.205 11.8 837.805 15.2 816.805 20.6Z"/>
@@ -2195,6 +2228,7 @@
         <p class="footer-copy">&copy; 2025 Moment. Sydney, Australia.</p>
       </div>
     </div>
+    </div><!-- /footer-bento -->
 
   </footer>
 
